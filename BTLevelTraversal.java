@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -23,9 +20,10 @@ class BTLevelTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(root == null) return result;
-        Queue<TreeNode> nextLevelNodes = new LinkedList<TreeNode>();
+        Queue<TreeNode> nextLevelNodes = new ArrayDeque<>();
         Queue<TreeNode> currentLevelNodes = new LinkedList<TreeNode>();
         List<Integer> currentLevelResult = new ArrayList<Integer>();
+        ArrayList<Integer> bal = new ArrayList<>();
 
         currentLevelNodes.add(root);
 
